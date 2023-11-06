@@ -1,6 +1,7 @@
 package org.example.bebra.model;
 import jakarta.persistence.*;
 import org.example.bebra.sochniy.Pet;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -11,6 +12,7 @@ public class MedicalHistory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "date")
     private Date date;
 
@@ -20,7 +22,9 @@ public class MedicalHistory {
     @Column(name = "description")
     private String description;
 
-    @ManyToOne
+    private String petName;
+
+    @OneToOne
     @JoinColumn(name = "pet_id")
     private Pet pet;
 
@@ -45,4 +49,8 @@ public class MedicalHistory {
 
     public Pet getPet() { return pet;
     }
+
+    public String getPetName() {return petName;}
+
+    public void setPetName(String petName) {this.petName=petName;}
 }

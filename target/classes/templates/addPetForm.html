@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Добавление питомца</title>
+</head>
+<body>
+<h1>Добавление питомца:</h1>
+<form th:action="@{/addPet}" th:object="${pet}" method="post">
+    <label for="name">Кличка:</label>
+    <input type="text" id="name" th:field="*{name}" required>
+    <br>
+    <label for="kind">Вид:</label>
+    <input type="text" id="kind" th:field="*{kind}" required value="dog">
+    <br>
+    <label for="age">Возраст:</label>
+    <input type="number" id="age" th:field="*{age}" required>
+    <br>
+    <label for="ownerSurname">Фамилия владельца:</label>
+    <input type="text" id="ownerSurname" name="ownerSurname" required>
+    <br>
+    <label for="doctorSurname">Фамилия врача:</label>
+    <input type="text" id="doctorSurname" name="doctorSurname" required>
+    <br>
+    <label for="medicalHistoryId">ID медицинской истории:</label>
+    <input type="number" id="medicalHistoryId" name="medicalHistoryId" required>
+    <br>
+    <button type="submit">Добавить питомца</button>
+</form>
+</body>
+</html>

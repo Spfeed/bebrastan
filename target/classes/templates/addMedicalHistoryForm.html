@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Добавление медицинской истории</title>
+</head>
+<body>
+<h1>Добавление медицинской истории</h1>
+<form th:action="@{/addMedicalHistory}" th:object="${medicalHistory}" method="post">
+  <label for="date">Дата:</label>
+  <input type="text" id="date" th:field="*{date}" required>
+  <br>
+  <label for="type">Тип:</label>
+  <input type="text" id="type" th:field="*{type}" required>
+  <br>
+  <label for="description">Описание:</label>
+  <textarea id="description" th:field="*{description}" required></textarea>
+  <br>
+  <button type="submit" style="margin-top: 20px;">Добавить медицинскую историю</button>
+</form>
+</body>
+</html>

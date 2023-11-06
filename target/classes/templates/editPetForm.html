@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Редактирование питомца</title>
+</head>
+<body>
+<h1>Редактирование питомца:</h1>
+<form th:action="@{/editPet/{name}(name=${pet.name})}" th:object="${pet}" method="post">
+    <!-- Поля для редактирования данных питомца -->
+    <label for="name">Кличка:</label>
+    <input type="text" id="name" th:field="*{name}" required>
+    <label for="kind">Вид:</label>
+    <input type="text" id="kind" th:field="*{kind}" required>
+    <label for="doctor.id">ID врача:</label>
+    <input type="text" id="doctor.id" th:field="*{doctor.id}" required>
+    <label for="owner.id">ID владельца:</label>
+    <input type="text" id="owner.id" th:field="*{owner.id}" required>
+    <button type="submit">Сохранить изменения</button>
+</form>
+</body>
+</html>

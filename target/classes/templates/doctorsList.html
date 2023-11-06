@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Список докторов</title>
+</head>
+<body>
+<h1>Список докторов</h1>
+<ul>
+  <li th:each="doctor : ${doctors}">
+    <span th:text="${doctor.name}"></span>
+    <span th:text="${doctor.surname}"></span>
+    <span th:text="${doctor.job}"></span>
+  </li>
+</ul>
+</body>
+</html>

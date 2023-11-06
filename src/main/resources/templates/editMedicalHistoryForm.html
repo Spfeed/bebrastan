@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Редактирование медицинской истории</title>
+</head>
+<body>
+<h1>Редактирование медицинской истории:</h1>
+<form th:action="@{/editMedicalHistory/{id}(id=${medicalHistory.id})}" th:object="${medicalHistory}" method="post">
+  <!-- Поля для редактирования данных питомца -->
+  <label for="date">Дата:</label>
+  <input type="text" id="date" th:field="*{date}" required>
+  <label for="type">Тип:</label>
+  <input type="text" id="type" th:field="*{type}" required>
+  <label for="description">Описание:</label>
+  <input type="text" id="description" th:field="*{description}" required>
+  <label for="pet.id">ID питомца:</label>
+  <input type="text" id="pet.id" th:field="*{pet.id}" required>
+  <button type="submit">Сохранить изменения</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Список медицинских историй</title>
+</head>
+<body>
+<h1>Список историй</h1>
+<ul>
+  <li th:each="medicalHistory : ${medicalHistories}">
+    <span th:text="${medicalHistory.date}"></span>
+    <span th:text="${medicalHistory.type}"></span>
+    <span th:text="${medicalHistory.description}"></span>
+    <span th:text="${medicalHistory.pet}"></span>
+  </li>
+</ul>
+</body>
+</html>

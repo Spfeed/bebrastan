@@ -35,9 +35,15 @@ public class Pet {
     @Column(name = "age")
     private int age;
 
+    @OneToOne(mappedBy = "pet", cascade = CascadeType.ALL)
+    private MedicalHistory medicalHistory;
+
     @ManyToOne
     @JoinColumn(name = "owner_id")
     private Owner owner;
+
+    @ManyToMany(mappedBy = "pets")
+    private List<Owner> owners;
 
     @ManyToOne
     @JoinColumn(name = "doctor_id")

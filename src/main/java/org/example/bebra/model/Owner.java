@@ -43,4 +43,13 @@ public class Owner {
     public String getFathername() {return fathername;}
 
     public void setFathername(String fathername) {this.fathername=fathername;}
+
+    public List<Pet> getPets() {
+        return pets;
+    }
+
+    public void setPets(List<Pet> pets) {
+        this.pets = pets;
+    }
+
 }
